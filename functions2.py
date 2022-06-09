@@ -4,10 +4,10 @@ import data as dt
 
 
 pt_data=dt.pt_data
-n = pt_data.groupby('side')['side'].count()
 
 
-def f_publictrades_metrics(pt_data:dict) -> dict:
+
+def f_publictrades_metrics(pt_data=pt_data):
     
     n = pt_data.groupby('side')['side'].count()
     
