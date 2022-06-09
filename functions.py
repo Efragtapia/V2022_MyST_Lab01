@@ -83,7 +83,7 @@ def f_publictrades_metrics(data_pt:dict) -> dict:
     pt9 = pt_data['price'].resample('60T').ohlc()
 
     
-    r_data2 = {''}
+    r_data2 = {'Buy_tt': pt1,'Sell_tt':pt2,'Total_trade':pt3,'Diff':pt4,'OHLC':pt9}
 
     return r_data2
 

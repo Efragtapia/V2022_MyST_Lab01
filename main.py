@@ -4,6 +4,9 @@ import functions as fun
 
 
 data_ob=dt.ob_data
+pt_data=dt.pt_data
+
+
 
 OBook=fun.f_descriptive_ob(data_ob=data_ob)
 
@@ -38,10 +41,24 @@ print(f"w-Midprice:{metric9}")
 metric10 = pd.DataFrame(OBook['V-WAP'])
 print(f"V-WAP:{metric10}")
 
+PTrades= fun.f_publictrades_metrics(pt_data=pt_data)
 
+r_data2 = {'Buy_tt': pt1,'Sell_tt':pt2,'Total_trade':pt3,'Difference in Trade Count':pt4,'OHLC':pt9}
 
+metricB1 = pd.DataFrame(PTrades['Buy_tt'])
+print(f"Buy Trades Count:{metricB1}")
 
+metricB2 = pd.DataFrame(PTrades['Sell_tt'])
+print(f"Sell Trades Count:{metricB2}")
 
+metricB3 = pd.DataFrame(PTrades['Total_trade'])
+print(f"Total Trade:{metricB3}")
+
+metricB4 = pd.DataFrame(PTrades['Diff'])
+print(f"Difference in Trade Count:{metricB4}")
+
+metricB5 = pd.DataFrame(PTrades['OHLC'])
+print(f"OHLC:{metricB5}")
 
 
 
