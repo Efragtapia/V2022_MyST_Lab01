@@ -1,8 +1,6 @@
-import sys
-import os
+
 import pandas as pd
 import numpy as np
-import pyarrow as pa
 import json 
  
 pt_data = pd.read_csv('btcusdt_binance.csv')

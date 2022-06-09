@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 import data as dt
 
+data_ob=dt.ob_data
+pt_data=dt.pt_data
+
 def f_descriptive_ob(data_ob:dict) -> dict:
     
     # -- Median Time of Orderbook update -- #
@@ -51,7 +54,7 @@ def f_descriptive_ob(data_ob:dict) -> dict:
 
 
 
-def f_publictrades_metrics(data_pt:dict) -> dict:
+def f_publictrades_metrics(pt_data:dict) -> dict:
     
     pt_data.index = pd.to_datetime(pt_data)['timestamp']
     n = pt_data.groupby('side')['side'].count()

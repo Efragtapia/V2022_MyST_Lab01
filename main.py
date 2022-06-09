@@ -1,6 +1,8 @@
 import data as dt
 import pandas as pd 
 import functions as fun 
+import functions2 as fun2 
+import visualization as vi
 
 
 data_ob=dt.ob_data
@@ -41,9 +43,8 @@ print(f"w-Midprice:{metric9}")
 metric10 = pd.DataFrame(OBook['V-WAP'])
 print(f"V-WAP:{metric10}")
 
-PTrades= fun.f_publictrades_metrics(pt_data=pt_data)
+PTrades= fun2.f_publictrades_metrics(pt_data=pt_data)
 
-r_data2 = {'Buy_tt': pt1,'Sell_tt':pt2,'Total_trade':pt3,'Difference in Trade Count':pt4,'OHLC':pt9}
 
 metricB1 = pd.DataFrame(PTrades['Buy_tt'])
 print(f"Buy Trades Count:{metricB1}")
@@ -59,6 +60,14 @@ print(f"Difference in Trade Count:{metricB4}")
 
 metricB5 = pd.DataFrame(PTrades['OHLC'])
 print(f"OHLC:{metricB5}")
+
+plot_3 = vi.plot_lines(data_x=list(data_ob.keys()),
+                       data_s1= OBook['bid_size'],
+                       data_s2= OBook['ask_size'],
+                       data_s3= OBook['total_size'])
+plot_3.show()
+
+
 
 
 
